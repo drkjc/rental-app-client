@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Shelf from './components/Shelf';
 
 function App() {
   return (
@@ -7,8 +8,8 @@ function App() {
       <div className="navbar">
         <p>Navbar</p>
       </div>
-      <div className="sidebar">
-        <p>Sidebar</p>
+      <div className="shelf">
+        <Shelf />
       </div>
       <div className="main-content">
         <p>Main Content</p>

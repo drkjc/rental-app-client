@@ -2,7 +2,7 @@
   text-align: center;
 }
 .navbar,
-.sidebar,
+.shelf,
 .main-content {
   float: left;
   color: white;
@@ -15,14 +15,14 @@
   border-bottom: 1px solid white;
 }
 
-.sidebar,
+.shelf,
 .main-content {
   height: 90vh;
   position: fixed;
   top: 11vh;
 }
 
-.sidebar {
+.shelf {
   width: 30vw;
   background-color: palegreen;
 }
@@ -31,4 +31,8 @@
   left: 30vw;
   width: 70vw;
   background-color: lightblue;
+}
+
+.item {
+  color: black;
 }
