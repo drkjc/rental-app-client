@@ -1,10 +1,19 @@
 import React from 'react';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 const Item = ({ item }) => {
   return (
-    <div>
-      <h1>{item.name}</h1>
-    </div>
+    <Router>
+      <div>
+        <Link to={{
+          pathname: `/items/${item.id}`,
+          state: {
+            item: true
+          }
+        }} className="item">{item.name}
+        </Link>
+      </div>
+    </Router>
   )
 }
 

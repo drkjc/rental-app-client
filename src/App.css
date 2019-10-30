@@ -25,10 +25,11 @@
 .shelf {
   width: 30vw;
   background-color: palegreen;
+  right: 0
 }
 
 .main-content {
-  left: 30vw;
+  right: 30vw;
   width: 70vw;
   background-color: lightblue;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Shelf from './components/Shelf';
+import ItemDisplay from './components/ItemDisplay'
 
 function App() {
   return (
@@ -8,11 +9,11 @@ function App() {
       <div className="navbar">
         <p>Navbar</p>
       </div>
+      <div className="main-content">
+        <ItemDisplay />
+      </div>
       <div className="shelf">
         <Shelf />
-      </div>
-      <div className="main-content">
-        <p>Main Content</p>
       </div>
     </div>
   );
