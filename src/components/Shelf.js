@@ -9,8 +9,12 @@ class Shelf extends Component {
   }
 
   componentDidMount() {
-    ItemService.fetchItems()
+    ItemService.fetchItems().then(items => this.setState({ items }))
   }
+
+  // setupItemDisplay = item => {
+  //   this.props.handleItemDisplay(item)
+  // }
 
   renderItems = () => {
     return this.state.items.map(item => {
