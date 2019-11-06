@@ -3,9 +3,14 @@ import Item from './Item'
 import ItemService from '../services/ItemService';
 
 class Shelf extends Component {
-  
-  state = {
-    items: []
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      items: [],
+      shelves: []
+    }
+
   }
 
   componentDidMount() {
@@ -23,8 +28,9 @@ class Shelf extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
-      <div>{this.renderItems()}</div>
+      <div>{/*this.renderItems()*/}</div>
     )
   }
 }

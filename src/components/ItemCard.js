@@ -33,6 +33,14 @@ class ItemCard extends Component {
     }
   }
 
+  renderRentItemForm = item => {
+    if (item.rented === false) {
+      return <RentItemForm />
+    } else {
+      return null
+    }
+  }
+
   render() {
     console.log(this.state)
     return (
@@ -40,7 +48,7 @@ class ItemCard extends Component {
         <h1>{this.state.item.name}</h1>
         <p>{this.state.item.price}</p>
         <p>{this.rented(this.state.item)}</p>
-        <RentItemForm />
+        <p>{this.renderRentItemForm(this.state.item)}</p>
       </div>
     )
   }

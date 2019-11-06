@@ -9,6 +9,10 @@ const ItemService = {
   fetchItem: id => {
     return fetch(`${API_URL}/items/${id}`)
     .then(response => response.json())
+  },
+  fetchShelves: () => {
+    return fetch(`${API_URL}/shelves`)
+    .then(response => response.json())
   }
 }
 
