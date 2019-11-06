@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Shelf from './components/Shelf';
-import ItemDisplay from './components/ItemDisplay'
+import ItemCard from './components/ItemCard'
 import ItemService from './services/ItemService';
 import { Route, Switch } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ function App() {
       <div className="main-content">
         <Switch>
           <div className="main-content">
-            <Route path="/items/:id" render={(props) => <ItemDisplay {...props} />} />
+            <Route path="/items/:id" render={(props) => <ItemCard {...props} />} />
           </div>
         </Switch>
       </div>
