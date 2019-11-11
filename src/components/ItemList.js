@@ -1,17 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Item from './Item';
+import ItemCard from './ItemCard';
+import ItemService from '../services/ItemService';
+import { Link } from 'react-router-dom';
 
-function ItemList(props) {
+class ItemList extends Component {
+  constructor(props) {
+    super(props)
 
-  function renderItems(props) {
-    return props.location.state.map(item => {
-      return <Item key={item.id} item={item} />
+    this.state = {
+      items: []
+    }
+  }
+
+  componentDidMount() {
+    let id = this.props.match.params.id
+    ItemService.fetchShelfItems(id).then(items => this.setState({ items }))
+  }
+
+  renderItems = () => {
+    return this.state.items.map(item => {
+      return <p><Link to={{ pathname: `/shelves/${this.props.match.params.id}/items/${item.id}`, state: item }}>{item.name}</Link></p>
     })
   }
 
-  return (
-    <div>{renderItems(props)}</div>
-  )
+
+  render() {
+    console.log(this.state)
+    return (
+      <div>{this.renderItems()}</div>
+    )
+  }
 }
 
 export default ItemList

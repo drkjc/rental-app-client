@@ -13,6 +13,10 @@ const ItemService = {
   fetchShelves: () => {
     return fetch(`${API_URL}/shelves`)
     .then(response => response.json())
+  },
+  fetchShelfItems: id => {
+    return fetch(`${API_URL}/shelves/${id}/items`)
+    .then(response => response.json())
   }
 }
 

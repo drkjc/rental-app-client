@@ -42,15 +42,17 @@ class ItemCard extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div>
         <h1>{this.state.item.name}</h1>
         <p>{this.state.item.price}</p>
-        <p>{this.rented(this.state.item)}</p>
-        <p>{this.renderRentItemForm(this.state.item)}</p>
+        {/* <p>{this.rented(this.state.item)}</p> */}
+        {/* <p>{this.renderRentItemForm(this.state.item)}</p> */}
       </div>
     )
   }
 }
+
 
 export default ItemCard;

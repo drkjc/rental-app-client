@@ -14,7 +14,7 @@ function App() {
         <Navbar />
       </div>
       <div className="main-content">
-        <Route path="/items/:id" render={(props) => <ItemCard {...props}/>}/>
+        <Route exact path="/shelves/:shelf_id/items/:id" render={(props) => <ItemCard {...props}/>}/>
       </div>
       <div className="shelf">
         <Route exact path="/shelves" component={ShelfList}/>
