@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 const Item = ({ item }) => {
 
   return (
-      <div>
+      <p>
         <Link to={{pathname:`/items/${item.id}`, state: item}}>{item.name}</Link>
-      </div>
+      </p>
   )
 }
 

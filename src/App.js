@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Shelf from './components/Shelf';
+import ShelfList from './components/ShelfList';
 import ItemCard from './components/ItemCard';
+import ItemList from './components/ItemList';
 import Navbar from './components/Navbar';
-import ItemService from './services/ItemService';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 function App() {
 
@@ -13,16 +13,13 @@ function App() {
       <div className="navbar">
         <Navbar />
       </div>
-      <Switch>
-        <div className="main-content">
-          <div className="main-content">
-            <Route path="/items/:id" render={(props) => <ItemCard {...props} />} />
-          </div>
-        </div>
-        <div className="shelf">
-          <Route path="/shelves" render={(props) => <Shelf {...props} />} />
-        </div>
-      </Switch>
+      <div className="main-content">
+        <Route path="/items/:id" render={(props) => <ItemCard {...props}/>}/>
+      </div>
+      <div className="shelf">
+        <Route exact path="/shelves" component={ShelfList}/>
+        <Route path="/shelves/:id/items" render={(props) => <ItemList {...props} />}/>
+      </div>
     </div>
   );
 }

@@ -42,7 +42,6 @@ class ItemCard extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div>
         <h1>{this.state.item.name}</h1>
