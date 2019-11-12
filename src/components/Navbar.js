@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getCart } from '../redux/actions/actions'
 
 
 function Navbar() {
