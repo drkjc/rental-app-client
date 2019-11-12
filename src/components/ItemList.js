@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Item from './Item';
-import ItemCard from './ItemCard';
 import ItemService from '../services/ItemService';
 import { Link } from 'react-router-dom';
 
@@ -26,7 +24,6 @@ class ItemList extends Component {
 
 
   render() {
-    console.log(this.state)
     return (
       <div>{this.renderItems()}</div>
     )
