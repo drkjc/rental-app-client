@@ -1,5 +1,8 @@
 export default function rootReducer(state = {
   cart: []
 }, action) {
-  return state;
+  switch(action.type) {
+    default: 
+      return state;
+  }
 }

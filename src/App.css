@@ -1,34 +1,34 @@
 .App {
   text-align: center;
 }
-.navbar,
-.shelf,
-.main-content {
+#navbar,
+#shelf,
+#main-content {
   float: left;
   color: white;
 }
 
-.navbar {
+#navbar {
   width: 100vw;
   height: 10vh;
   background-color: orangered;
   border-bottom: 1px solid white;
 }
 
-.shelf,
-.main-content {
+#shelf,
+#main-content {
   height: 90vh;
   position: fixed;
   top: 11vh;
 }
 
-.shelf {
+#shelf {
   width: 30vw;
   background-color: palegreen;
   right: 0
 }
 
-.main-content {
+#main-content {
   right: 30vw;
   width: 70vw;
   background-color: lightblue;
