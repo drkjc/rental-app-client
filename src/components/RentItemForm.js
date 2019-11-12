@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Datetime from 'react-datetime';
+import '../react-datetime.css';
 
 class RentItemForm extends Component {
 
@@ -8,20 +10,24 @@ class RentItemForm extends Component {
     endDate: ''
   }
 
-  handleChange = () => {
-    console.log(this.startDate)
+  handleDateStarted = date => {
+    this.setState({ startDate: date })
+  }
+
+  handleDateEnded = date => {
+    this.setState({ endDate: date })
   }
 
   addToCart = event => {
     event.preventDefault();
-    console.log(this.state.startDate)
+    console.log(this.state)
   }
 
   render() {
     return (
       <form onSubmit={event => this.addToCart(event)}>
-        Start Date: <input onChange={this.handleChange} value={this.state.startDate} type="date" /><br />
-        End Date: <input onChange={this.handleChange} value={this.state.endDate} type="date" /><br />
+        Start Date: <Datetime onChange={this.handleDateStarted}/><br />
+        End Date: <Datetime onChange={this.handleDateEnded} /><br />
         <button type="submit">Rent</button>
       </form>
     )
