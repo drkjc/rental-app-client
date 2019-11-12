@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import ShelfList from './components/ShelfList';
-import ItemCard from './components/ItemCard';
+import ItemCard from './containers/ItemCard';
 import ItemList from './components/ItemList';
 import Navbar from './components/Navbar';
 import { Route } from 'react-router-dom';

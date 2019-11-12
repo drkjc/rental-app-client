@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ItemService from '../services/ItemService';
-import RentItemForm from './RentItemForm';
+import RentItemForm from '../components/RentItemForm';
 
 class ItemCard extends Component {
   constructor(props) {
