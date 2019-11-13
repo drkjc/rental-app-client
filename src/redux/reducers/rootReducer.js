@@ -1,17 +1,10 @@
 import { combineReducers } from 'redux';
 import cartReducer from './cartReducer';
-
-// export default function rootReducer(state = {
-//   cart: []
-// }, action) {
-//   switch(action.type) {
-//     default: 
-//       return state;
-//   }
-// }
+import itemReducer from './itemReducer';
 
 const rootReducer = combineReducers({
-  cart: cartReducer
+  cart: cartReducer,
+  item: itemReducer
 })
 
 export default rootReducer;
