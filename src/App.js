@@ -4,7 +4,7 @@ import ShelfList from './components/ShelfList';
 import ItemCard from './containers/ItemCard';
 import ItemList from './components/ItemList';
 import Navbar from './components/Navbar';
-import cart from './components/Cart';
+import Cart from './containers/Cart';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
         <div id="navbar">
           <Navbar />
         </div>
-        <div id="cart">
-          <Route exact path="/cart" component={cart} />
+        <div id='cart'>
+          <Route exact path="/cart" render={(props) => <Cart {...props}/>}/>
         </div>
         <div id="main-content">
           <Route exact path="/shelves/:shelf_id/items/:id" render={(props) => <ItemCard {...props}/>}/>

@@ -9,9 +9,11 @@
 
 #navbar {
   width: 100vw;
-  height: 10vh;
+  /*height: 10vh;*/
   background-color: orangered;
   border-bottom: 1px solid white;
+  position: fixed;
+  top: 0;
 }
 
 #shelf,
@@ -24,15 +26,22 @@
 #shelf {
   width: 30vw;
   background-color: palegreen;
-  right: 0
+  right: 0;
+  top: 90px
 }
 
 #main-content {
   right: 30vw;
   width: 70vw;
   background-color: lightblue;
+  top: 90px
 }
 
 .item {
   color: black;
+}
+
+#cart {
+  top: 90px;
+  position: relative;
 }
