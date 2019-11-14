@@ -12,9 +12,21 @@ export function getCart(id) {
   }
 }
 
-export const addItemToCart = () => {
-  return function(dispatch) {
-    return fetch('http://localhost:3001/cart'
-    )
+export function addItemToCart(item, id) {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_CART' })
+    fetch(`${API_URL}/carts/${id}`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ item })
+    })
+      .then(response => response.json())
+      .then(cart => dispatch({ type: 'GET_CART', payload: cart }))
+      .catch(err => {
+        console.error(err);
+      });
   }
 }
