@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Datetime from 'react-datetime';
 import '../react-datetime.css';
 
@@ -21,7 +22,7 @@ class RentItemForm extends Component {
   addToCart = event => {
     event.preventDefault();
     console.log(this.state)
-    
+
   }
 
   render() {
@@ -35,4 +36,4 @@ class RentItemForm extends Component {
   }
 }
 
-export default RentItemForm;
+export default connect(null, null)(RentItemForm);
