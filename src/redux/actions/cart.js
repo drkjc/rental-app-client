@@ -2,7 +2,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 export function getCart(id) {
   return (dispatch) => {
-    dispatch({ type: 'LOADING_CART' })
+    dispatch({ type: 'LOADING' })
     fetch(`${API_URL}/carts/${id}`)
       .then(response => response.json())
       .then(cart => dispatch({ type: 'GET_CART', payload: cart }))
@@ -14,7 +14,7 @@ export function getCart(id) {
 
 export function addItemToCart(item, id) {
   return (dispatch) => {
-    dispatch({ type: 'LOADING_CART' })
+    dispatch({ type: 'LOADING' })
     fetch(`${API_URL}/carts/${id}`, {
       method: 'POST',
       headers: {

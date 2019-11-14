@@ -1,14 +1,14 @@
 export default function shelfReducer(state = {
   shelves: [],
   items: [],
-  item: []
+  item: [],
+  loading: true
 }, action) {
   switch (action.type) {
-    case 'LOADING_SHELVES':
+    case 'LOADING':
       return {
         ...state,
         shelves: [...state.shelves],
-        loading: true
       }
     case 'GET_SHELVES':
       return {
@@ -16,23 +16,11 @@ export default function shelfReducer(state = {
         shelves: action.payload,
         loading: false
       }
-    case 'LOADING_SHELF_ITEMS':
-      return {
-        ...state,
-        items: [...state.items],
-        loading: true
-      }
     case 'GET_SHELF_ITEMS':
       return {
         ...state, 
         items: action.payload,
         loading: false
-      }
-    case 'LOADING_SHELF_ITEM':
-      return {
-        ...state,
-        item: [],
-        loading: true
       }
     case 'GET_SHELF_ITEM':
       return {
