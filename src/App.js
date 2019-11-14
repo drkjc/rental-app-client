@@ -17,7 +17,7 @@ class App extends Component {
             <Navbar />
           </div>
           <div id='cart'>
-            <Route path="/carts/:id" component={Cart}/>
+            <Route path="/cart" component={Cart}/>
           </div>
           <div id="main-content">
             <Route exact path="/shelves/:shelf_id/items/:id" render={(props) => <ItemCardDisplay {...props}/>}/>

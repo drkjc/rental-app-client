@@ -6,8 +6,8 @@ import CartList from '../components/CartList';
 class Cart extends Component {
 
   componentDidMount() {
-    //let id = 2
-    let id = this.props.match.params.id
+    let id = 2
+    //let id = this.props.match.params.id
     this.props.getCart(id)
   }
 
