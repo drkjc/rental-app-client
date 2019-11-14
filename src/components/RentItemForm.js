@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { addItemToCart } from '../redux/actions/cart';
 import Datetime from 'react-datetime';
 import '../react-datetime.css';
 
@@ -7,8 +8,8 @@ class RentItemForm extends Component {
 
   state = {
     item: this.props.item,
-    startDate: '',
-    endDate: ''
+    startDate: this.props.item.start_date,
+    endDate: this.props.item.end_date
   }
 
   handleDateStarted = date => {
@@ -22,7 +23,7 @@ class RentItemForm extends Component {
   addToCart = event => {
     event.preventDefault();
     console.log(this.state)
-
+    this.props.addItemToCart(this.state)
   }
 
   render() {
@@ -36,4 +37,4 @@ class RentItemForm extends Component {
   }
 }
 
-export default connect(null, null)(RentItemForm);
+export default connect(null, { addItemToCart })(RentItemForm);

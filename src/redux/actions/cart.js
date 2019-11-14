@@ -12,10 +12,10 @@ export function getCart(id) {
   }
 }
 
-export function addItemToCart(item, id) {
+export function addItemToCart(item) {
   return (dispatch) => {
     dispatch({ type: 'LOADING' })
-    fetch(`${API_URL}/carts/${id}`, {
+    fetch(`${API_URL}/carts`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
