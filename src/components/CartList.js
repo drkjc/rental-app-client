@@ -3,10 +3,8 @@ import CartCard from './CartCard';
 
 
 const CartList = (props) => {
-  console.log(props, 'cartList')
-  //debugger;
   return props.cart.map(item => {
-    return <li>{item.name}</li>
+    return <p><CartCard item={item}/></p>
   })
 }
 
