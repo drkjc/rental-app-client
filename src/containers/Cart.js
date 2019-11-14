@@ -6,17 +6,19 @@ import CartList from '../components/CartList';
 class Cart extends Component {
 
   componentDidMount() {
-    let id = 2
+    //let id = 2
+    let id = this.props.match.params.id
     this.props.getCart(id)
   }
 
   handleLoading = () => {
-    console.log(this.props.cart, 'handle')
-    if (this.props.loading) {
-      return <div>Loading...</div>
-    } else {
-      return <CartList cart={this.props.cart} />
-    }
+    console.log(this.props, 'handle')
+
+      if (this.props.loading) {
+        return <div>Loading...</div>
+      } else {
+        return <CartList cart={this.props.three} />
+      }
   }
 
   render() {
@@ -26,8 +28,8 @@ class Cart extends Component {
 
 const mapStateToProps = state => {
   return {
-    cart: state.cart.cart,
-    loading: state.cart.loading
+    three: state.one.two.items,
+    loading: state.one.loading
   }
 }
 

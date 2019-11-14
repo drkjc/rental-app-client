@@ -3,7 +3,7 @@ import cartReducer from './cartReducer';
 import shelfReducer from './shelfReducer';
 
 const rootReducer = combineReducers({
-  cart: cartReducer,
+  one: cartReducer,
   shelf: shelfReducer
 })
 

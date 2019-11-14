@@ -1,17 +1,17 @@
 export default function cartReducer(state = {
-  cart: []
+  two: [],
+  loading: true
 }, action) {
   switch (action.type) {
     case 'LOADING_CART':
       return {
         ...state,
-        cart: [],
-        loading: true
+        cart: []
       }
     case 'GET_CART':
       return {
         ...state, 
-        cart: action.payload,
+        two: action.payload,
         loading: false
       }
     case 'ADD_ITEM_TO_CART':

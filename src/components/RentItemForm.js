@@ -21,6 +21,7 @@ class RentItemForm extends Component {
   addToCart = event => {
     event.preventDefault();
     console.log(this.state)
+    
   }
 
   render() {

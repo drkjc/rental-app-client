@@ -16,11 +16,12 @@ function Navbar() {
     document.getElementById('cart').style.visibility = 'visible';
   }
 
-  
+  let id = 2
+
   return (
     <div>
       <p><Link onClick={renderShelves} to={{ pathname: `/shelves` }}>shelves</Link></p>
-      <p><Link onClick={renderCart} to={{ pathname: `/cart` }}>cart</Link></p>
+      <p><Link onClick={renderCart} to={{ pathname: `/carts/${id}` }}>cart</Link></p>
     </div>
   )
 }
