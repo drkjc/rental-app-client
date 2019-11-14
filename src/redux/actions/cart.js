@@ -1,14 +1,16 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
-export const getCart = (id) => {
-  return function(dispatch) {
-    // make the api call 
-    // once we get the data, we can dispatch to reducers
-    return fetch(`${API_URL}/carts/${id}`)
-      .then(res => res.json())
+export function getCart(id) {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_CART' })
+    fetch(`${API_URL}/carts/${id}`)
+      .then(response => response.json())
       .then(cart => dispatch({ type: 'GET_CART', payload: cart }))
-  };
-};
+      .catch(err => {
+        console.error(err);
+      });
+  }
+}
 
 export const addItemToCart = () => {
   return function(dispatch) {

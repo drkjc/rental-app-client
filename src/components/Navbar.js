@@ -15,6 +15,7 @@ function Navbar() {
     document.getElementById('shelf').style.visibility = 'hidden';
     document.getElementById('cart').style.visibility = 'visible';
   }
+
   
   return (
     <div>

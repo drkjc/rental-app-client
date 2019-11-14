@@ -3,26 +3,34 @@ import { getCart } from '../redux/actions/cart';
 import { connect } from 'react-redux';
 import CartList from '../components/CartList';
 
-let id = 2
-
 class Cart extends Component {
 
-  // componentDidMount() {
-  //   this.props.getCart(id)
-  // }
+  componentDidMount() {
+    let id = 2
+    this.props.getCart(id)
+  }
+
+  handleLoading = () => {
+    console.log(this.props.cart, 'handle')
+    if (this.props.loading) {
+      return <div>Loading...</div>
+    } else {
+      return <CartList cart={this.props.cart} />
+    }
+  }
 
   render() {
-    console.log(this.props.cart, 'Cart Component')
-    return (
-      <div>
-        <h1>Cart</h1>
-        {/* <CartList items={this.props.cart}/> */}
-        <CartList items={this.props.cart} />
-      </div>
-    )
+    return <div>{this.handleLoading()}</div>
   }
 }
 
-const mapStateToProps = state => ({cart: state.cart.items})
+const mapStateToProps = state => {
+  return {
+    cart: state.cart.cart,
+    loading: state.cart.loading
+  }
+}
+
+
 
 export default connect(mapStateToProps, { getCart })(Cart);

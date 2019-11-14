@@ -10,12 +10,6 @@ class Item extends Component {
     this.props.getShelfItems(id);
   }
 
-  // renderItems = () => {
-  //   return this.state.items.map(item => {
-  //     return <p><Link to={{ pathname: `/shelves/${this.props.match.params.id}/items/${item.id}`, state: item }}>{item.name}</Link></p>
-  //   })
-  // }
-
   handleLoading = () => {
     if (this.props.loading) {
       return <div>Loading...</div>

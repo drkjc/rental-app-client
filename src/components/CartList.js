@@ -2,12 +2,12 @@ import React from 'react';
 import CartCard from './CartCard';
 
 
-const CartList = ({ items }) => {
-  console.log(items, 'CartList')
-  
-  // props.items.map(item => {
-  //   return <li><CartCard item={item} /></li>
+const CartList = ({ cart }) => {
+  console.log(cart, 'cartList')
+  // return cart.items.map(item => {
+  //   console.log(item)
   // })
+  
   return 'cartlist'
 }
 
