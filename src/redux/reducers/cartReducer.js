@@ -1,5 +1,5 @@
 export default function cartReducer(state = {
-  two: [],
+  cart: [],
   loading: true
 }, action) {
   switch (action.type) {
@@ -11,17 +11,17 @@ export default function cartReducer(state = {
     case 'GET_CART':
       return {
         ...state, 
-        two: action.payload,
+        cart: action.payload,
         loading: false
       }
     case 'ADD_ITEM_TO_CART':
       return {
         ...state,
-        two: [...state, action.payload],
+        cart: [...state, action.payload],
         loading: true
       }
-    case 'REMOVE_ITEM_TO_CART':
-      console.log(state.two, 'reducer state')
+    case 'REMOVE_ITEM_FROM_CART':
+      console.log(state.cart, 'reducer state')
       return ''
     default:
       return state;

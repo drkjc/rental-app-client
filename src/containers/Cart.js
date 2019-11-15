@@ -17,7 +17,7 @@ class Cart extends Component {
       if (this.props.loading) {
         return <div>Loading...</div>
       } else {
-        return <CartList cart={this.props.three} removeItem={this.props.removeItemFromCart} />
+        return <CartList cart={this.props.cart} removeItem={this.props.removeItemFromCart} />
       }
   }
 
@@ -28,8 +28,8 @@ class Cart extends Component {
 
 const mapStateToProps = state => {
   return {
-    three: state.one.two.items,
-    loading: state.one.loading
+    cart: state.cart.cart.items,
+    loading: state.cart.loading
   }
 }
 
