@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getCart } from '../redux/actions/cart';
+import { getCart, removeItemFromCart } from '../redux/actions/cart';
 import { connect } from 'react-redux';
 import CartList from '../components/CartList';
 
@@ -17,7 +17,7 @@ class Cart extends Component {
       if (this.props.loading) {
         return <div>Loading...</div>
       } else {
-        return <CartList cart={this.props.three} />
+        return <CartList cart={this.props.three} removeItem={this.props.removeItemFromCart} />
       }
   }
 
@@ -35,4 +35,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps, { getCart })(Cart);
+export default connect(mapStateToProps, { getCart, removeItemFromCart })(Cart);

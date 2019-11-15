@@ -15,7 +15,14 @@ export default function cartReducer(state = {
         loading: false
       }
     case 'ADD_ITEM_TO_CART':
-      return 'add item to cart'
+      return {
+        ...state,
+        two: [...state, action.payload],
+        loading: true
+      }
+    case 'REMOVE_ITEM_TO_CART':
+      console.log(state.two, 'reducer state')
+      return ''
     default:
       return state;
   }

@@ -23,10 +23,26 @@ export function addItemToCart(item) {
       },
       body: JSON.stringify({ item })
     })
-      .then(response => response.json())
-      .then(cart => dispatch({ type: 'GET_CART', payload: cart }))
-      .catch(err => {
-        console.error(err);
-      });
+    .then(response => response.json())
+    .then(cart => dispatch({ type: 'GET_CART', payload: cart }))
+    .catch(err => {
+      console.error(err);
+    });
+  }
+}
+
+export function removeItemFromCart(id, item) {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING' })
+    fetch(`${API_URL}/carts/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ item })
+    })
+    .then(response => response.json())
+    .then(cart => dispatch({ type: 'REMOVE_ITEM_FROM_CART', payload: cart, item: item}))
   }
 }

@@ -26,13 +26,14 @@ class ItemCardDisplay extends Component {
         <>
           <h1>{name}</h1>
           <p>{price}</p>
-          <p>{this.rented(rented)}</p>
+          <>{this.rented(rented)}</>
         </>  
       )
     }
   }
 
   render() {
+    console.log(this.props.location.state, 'item')
     return (
       <div>
         {this.handleLoading()}
