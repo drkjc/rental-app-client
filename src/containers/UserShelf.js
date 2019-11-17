@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import { getUserShelfItems } from '../redux/actions/shelf';
+import { getUserShelfItems, addItemToShelf } from '../redux/actions/shelf';
 import { connect } from 'react-redux';
 import UserShelfItemList from '../components/UserShelfItemList'
+import AddItemForm from '../components/AddItemForm';
 
 class UserShelf extends Component {
 
   componentDidMount() {
     // hard coded user_id, and shelf_id
-    let user_id = 1
-    let shelf_id = 1
+    let user_id = this.props.user_id
+    let shelf_id = user_id
     this.props.getUserShelfItems(user_id, shelf_id);
   }
 
@@ -22,8 +23,12 @@ class UserShelf extends Component {
 
 
   render() {
+    console.log(this.props, 'User Shelf Props')
     return (
-      <div id="user-shelf">{this.handleLoading()}</div>
+      <div id="user-shelf">
+        <AddItemForm addItem={this.props.addItemToShelf} user_id={this.props.user_id}/>
+        {this.handleLoading()}
+      </div>
     )
   }
 }
@@ -35,4 +40,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { getUserShelfItems })(UserShelf)
+export default connect(mapStateToProps, { getUserShelfItems, addItemToShelf })(UserShelf)

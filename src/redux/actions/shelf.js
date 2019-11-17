@@ -38,3 +38,19 @@ export function getUserShelfItems(user_id, shelf_id) {
     )
   }
 }
+
+export function addItemToShelf(user_id, shelf_id, item) {
+  return (dispatch) => {
+    dispatch({type: 'LOADING'})
+    fetch(`${API_URL}/users/${user_id}/shelves/${shelf_id}/items`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ item })
+    })
+      .then(response => response.json())
+      .then(item => dispatch({ type: 'ADD_ITEM_TO_SHELF', payload: item })
+    )}
+  }

@@ -20,7 +20,7 @@ class App extends Component {
           <Switch>
             <div>
               <Route path="/cart" component={Cart} />
-              <Route path="/shelf" component={UserShelf}/>
+              <Route path="/shelf" render={(props) => <UserShelf {...props} user_id={this.props.user_id}/> } />
               <Route path="/shelves/:shelf_id/items/:id" render={(props) => <ItemCardDisplay {...props} />} />
               <Route exact path="/shelves" component={Shelf} />
               <Route path="/shelves/:shelf_id/items" render={(props) => <Item {...props} />} />

@@ -34,6 +34,12 @@ export default function shelfReducer(state = {
         items: action.payload, 
         loading: false
       }
+    case 'ADD_ITEM_TO_SHELF':
+      return {
+        ...state, 
+        items: action.payload,
+        loading: false
+      }
     default:
       return state;
   }
