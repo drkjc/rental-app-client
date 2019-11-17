@@ -7,31 +7,6 @@ import Navbar from './components/Navbar';
 import Cart from './containers/Cart';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-// class App extends Component {
-
-//   render() {
-//     return (
-//       <div className="App">
-//         <Router>
-//           <div id="navbar">
-//             <Navbar />
-//           </div>
-//           <div id='cart'>
-//             <Route path="/cart" component={Cart}/>
-//           </div>
-//           <div id="main-content">
-//             <Route exact path="/shelves/:shelf_id/items/:id" render={(props) => <ItemCardDisplay {...props}/>}/>
-//           </div>
-//           <div id="shelf">
-//             <Route exact path="/shelves" component={Shelf}/>
-//             <Route path="/shelves/:shelf_id/items" render={(props) => <Item {...props} />}/>
-//           </div>
-//         </Router>
-//       </div>
-//     );
-//   }
-// }
-
 class App extends Component {
 
   render() {
@@ -42,10 +17,12 @@ class App extends Component {
             <Navbar />
           </div>
           <Switch>
-            <Route path="/cart" component={Cart} />
-            <Route path="/shelves/:shelf_id/items/:id" render={(props) => <ItemCardDisplay {...props} />} />
-            <Route exact path="/shelves" component={Shelf} />
-            <Route path="/shelves/:shelf_id/items" render={(props) => <Item {...props} />} />
+            <div>
+              <Route path="/cart" component={Cart} />
+              <Route path="/shelves/:shelf_id/items/:id" render={(props) => <ItemCardDisplay {...props} />} />
+              <Route exact path="/shelves" component={Shelf} />
+              <Route path="/shelves/:shelf_id/items" render={(props) => <Item {...props} />} />
+            </div>
           </Switch>
         </Router>
       </div>
