@@ -16,7 +16,6 @@ class UserShelf extends Component {
     if (this.props.loading) {
       return <div>Loading...</div>
     } else {
-      console.log(this.props.items)
       return <UserShelfItemList items={this.props.items} />
     }
   }
@@ -24,7 +23,7 @@ class UserShelf extends Component {
 
   render() {
     return (
-      <div id="shelf">{this.handleLoading()}</div>
+      <div id="user-shelf">{this.handleLoading()}</div>
     )
   }
 }

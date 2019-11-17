@@ -1,10 +1,10 @@
 import React from 'react';
-import ItemCard from './ItemCard'
+import UserShelfItemCard from './UserShelfItemCard'
 
 const UserShelfItemList = ({ items }) => {
   return items.map(item => {
-    return <ItemCard key={item.id} item={item} />
+    return <UserShelfItemCard key={item.id} item={item} />
   })
 }
 
-export default UserShelfItemList
+export default UserShelfItemList;

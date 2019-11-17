@@ -1,8 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function UserShelfItemCard({ item }) {
-  return <p><Link to={{ pathname: `/users/${item.shelf_id}/shelves/${item.shelf_id}/items`, state: item }}>{item.name}</Link></p>
+  console.log(item)
+
+  return (
+    <div>
+      <h3>{item.name}</h3>
+      <p>{item.price}</p>
+      <p>{item.rented ? 'Unavailable' : 'Available'}</p>
+      <button>Edit</button>
+    </div>
+  )
 }
 
 export default UserShelfItemCard;
