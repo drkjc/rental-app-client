@@ -9,12 +9,6 @@ class ItemCardDisplay extends Component {
     redirect: false
   }
 
-  renderCart = () => {
-    document.getElementById('main-content').style.visibility = 'hidden';
-    document.getElementById('shelf').style.visibility = 'hidden';
-    document.getElementById('cart').style.visibility = 'visible';
-  }
-
   redirectDisplayComponent = () => {
     this.setState({
       redirect: true
@@ -23,7 +17,6 @@ class ItemCardDisplay extends Component {
 
   renderRedirect = () => {
     if (this.state.redirect) {
-      this.renderCart()
       return <Redirect to='/cart' />
     }
   }
@@ -59,7 +52,7 @@ class ItemCardDisplay extends Component {
 
   render() {
     return (
-      <div>
+      <div id="main-content">
         {this.handleLoading()}
         {this.renderRedirect()}
       </div>
