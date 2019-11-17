@@ -6,7 +6,6 @@ import Item from './containers/Item';
 import Navbar from './components/Navbar';
 import Cart from './containers/Cart';
 import UserShelf from './containers/UserShelf';
-import UserShelfItemCardDisplay from './containers/UserShelfItemCardDisplay';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -22,7 +21,6 @@ class App extends Component {
             <div>
               <Route path="/cart" component={Cart} />
               <Route path="/shelf" component={UserShelf}/>
-              <Route path="/shelves/:shelf_id/items/:id" render={(props) => <UserShelfItemCardDisplay {...props} />} />
               <Route path="/shelves/:shelf_id/items/:id" render={(props) => <ItemCardDisplay {...props} />} />
               <Route exact path="/shelves" component={Shelf} />
               <Route path="/shelves/:shelf_id/items" render={(props) => <Item {...props} />} />
