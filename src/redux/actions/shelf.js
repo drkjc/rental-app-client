@@ -9,10 +9,10 @@ export function getShelves() {
     }
   }
 
-export const getShelfItems = id => {
+export const getShelfItems = shelf_id => {
   return (dispatch) => {
     dispatch({ type: 'LOADING'})
-    fetch(`${API_URL}/shelves/${id}/items`)
+    fetch(`${API_URL}/shelves/${shelf_id}/items`)
       .then(response => response.json())
       .then(items => dispatch({ type: 'GET_SHELF_ITEMS', payload: items }))
   }

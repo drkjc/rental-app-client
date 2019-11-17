@@ -1,28 +1,32 @@
 export default function cartReducer(state = {
   cart: [],
+  items: [],
   loading: true
 }, action) {
   switch (action.type) {
     case 'LOADING_CART':
       return {
         ...state,
-        cart: []
+        cart: [],
+        items: []
       }
     case 'GET_CART':
       return {
         ...state, 
-        cart: action.payload,
+        items: action.payload,
         loading: false
       }
     case 'ADD_ITEM_TO_CART':
       return {
         ...state,
-        cart: [...state, action.payload],
-        loading: true
+        items: action.payload,
+        loading: false
       }
     case 'REMOVE_ITEM_FROM_CART':
-      console.log(state.cart, 'reducer state')
-      return ''
+      const items = state.items.filter(item => item.id !== action.payload.id);
+      return {
+        items
+      }
     default:
       return state;
   }

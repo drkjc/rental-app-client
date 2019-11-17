@@ -12,8 +12,6 @@ class Cart extends Component {
   }
 
   handleLoading = () => {
-    console.log(this.props, 'handle')
-
       if (this.props.loading) {
         return <div>Loading...</div>
       } else {
@@ -28,7 +26,7 @@ class Cart extends Component {
 
 const mapStateToProps = state => {
   return {
-    cart: state.cart.cart.items,
+    cart: state.cart.items,
     loading: state.cart.loading
   }
 }

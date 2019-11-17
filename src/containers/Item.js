@@ -6,8 +6,8 @@ import ItemList from '../components/ItemList'
 class Item extends Component {
 
   componentDidMount() {
-    let id = this.props.match.params.id
-    this.props.getShelfItems(id);
+    let shelf_id = this.props.match.params.shelf_id
+    this.props.getShelfItems(shelf_id);
   }
 
   handleLoading = () => {
@@ -27,6 +27,7 @@ class Item extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state, 'state in Item')
   return {
     items: state.shelf.items,
     loading: state.shelf.loading

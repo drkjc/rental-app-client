@@ -3,6 +3,17 @@ import RentItemForm from '../components/RentItemForm';
 
 class ItemCardDisplay extends Component {
 
+  state = {
+    name: '',
+    price: '',
+    rented: ''
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevProps, 'prevProps')
+    console.log(prevState, 'prevState')
+  }
+
   rented = rented => {
     if (rented === false) {
       return (
@@ -33,7 +44,6 @@ class ItemCardDisplay extends Component {
   }
 
   render() {
-    console.log(this.props.location.state, 'item')
     return (
       <div>
         {this.handleLoading()}

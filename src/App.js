@@ -24,7 +24,7 @@ class App extends Component {
           </div>
           <div id="shelf">
             <Route exact path="/shelves" component={Shelf}/>
-            <Route path="/shelves/:id/items" render={(props) => <Item {...props} />}/>
+            <Route path="/shelves/:shelf_id/items" render={(props) => <Item {...props} />}/>
           </div>
         </Router>
       </div>
