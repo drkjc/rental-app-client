@@ -1,17 +1,31 @@
 import React, { Component } from 'react'
 import RentItemForm from '../components/RentItemForm';
+import { Redirect } from 'react-router-dom'
 
 class ItemCardDisplay extends Component {
 
+
   state = {
-    name: '',
-    price: '',
-    rented: ''
+    redirect: false
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log(prevProps, 'prevProps')
-    console.log(prevState, 'prevState')
+  renderCart = () => {
+    document.getElementById('main-content').style.visibility = 'hidden';
+    document.getElementById('shelf').style.visibility = 'hidden';
+    document.getElementById('cart').style.visibility = 'visible';
+  }
+
+  redirectDisplayComponent = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      this.renderCart()
+      return <Redirect to='/cart' />
+    }
   }
 
   rented = rented => {
@@ -19,7 +33,7 @@ class ItemCardDisplay extends Component {
       return (
         <>
           <h3>Available</h3>
-          <RentItemForm item={this.props.location.state} />
+          <RentItemForm item={this.props.location.state} redirectDisplayComponent={this.redirectDisplayComponent} />
         </>
       )
     } else {
@@ -47,6 +61,7 @@ class ItemCardDisplay extends Component {
     return (
       <div>
         {this.handleLoading()}
+        {this.renderRedirect()}
       </div>
     )
   }

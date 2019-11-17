@@ -27,7 +27,6 @@ class Item extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state, 'state in Item')
   return {
     items: state.shelf.items,
     loading: state.shelf.loading

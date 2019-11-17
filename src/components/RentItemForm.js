@@ -23,8 +23,8 @@ class RentItemForm extends Component {
   addToCart = event => {
     let id = 1
     event.preventDefault();
-    console.log(this.state)
     this.props.addItemToCart(id, this.state)
+    this.props.redirectDisplayComponent()
   }
 
   render() {

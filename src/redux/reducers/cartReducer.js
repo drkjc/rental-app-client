@@ -4,11 +4,12 @@ export default function cartReducer(state = {
   loading: true
 }, action) {
   switch (action.type) {
-    case 'LOADING_CART':
+    case 'LOADING':
       return {
         ...state,
         cart: [],
-        items: []
+        items: [],
+        loading: true
       }
     case 'GET_CART':
       return {

@@ -1,7 +1,4 @@
-import { createBrowserHistory } from 'history';
 const API_URL = process.env.REACT_APP_API_URL;
-
-const history = createBrowserHistory();
 
 export function getCart(id) {
   return (dispatch) => {
@@ -27,13 +24,8 @@ export function addItemToCart(id, cart) {
       body: JSON.stringify({ cart })
     })
     .then(response => response.json())
-    .then(cart => {
-      dispatch({ type: 'ADD_ITEM_TO_CART', payload: cart })
-    })
-    .catch(err => {
-      console.error(err);
-    });
-  }
+    .then(cart => dispatch({ type: 'ADD_ITEM_TO_CART', payload: cart })
+  )}
 }
 
 export function removeItemFromCart(id, item_id) {
