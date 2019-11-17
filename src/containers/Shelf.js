@@ -13,7 +13,7 @@ class Shelf extends Component {
     if (this.props.loading) {
       return <div>Loading...</div>
     } else {
-      return <ShelfList shelves={this.props.shelves} />
+      return <ShelfList shelves={this.props.shelves} user_id={this.props.user_id} />
     }
   }
 

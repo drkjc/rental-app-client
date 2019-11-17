@@ -6,7 +6,7 @@ import CartList from '../components/CartList';
 class Cart extends Component {
 
   componentDidMount() {
-    let id = 1
+    let id = this.props.user_id
     //let id = this.props.match.params.id
     this.props.getCart(id)
   }
@@ -15,7 +15,7 @@ class Cart extends Component {
       if (this.props.loading) {
         return <div>Loading...</div>
       } else {
-        return <CartList cart={this.props.cart} removeItem={this.props.removeItemFromCart} />
+        return <CartList cart={this.props.cart} user_id={this.props.user_id} removeItem={this.props.removeItemFromCart} />
       }
   }
 

@@ -1,9 +1,11 @@
 import React from 'react';
 import ShelfCard from './ShelfCard';
 
-const ShelfList = ({ shelves }) => {
+const ShelfList = ({ shelves, user_id }) => {
   return shelves.map(shelf => {
-    return <ShelfCard key={shelf.id} shelf={shelf} />
+    if (shelf.user.id !== user_id) {
+      return <ShelfCard key={shelf.id} shelf={shelf} />
+    }
   }) 
 }
 
