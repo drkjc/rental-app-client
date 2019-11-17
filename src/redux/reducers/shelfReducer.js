@@ -28,6 +28,12 @@ export default function shelfReducer(state = {
         item: action.payload,
         loading: false
       }
+    case 'GET_USER_SHELF_ITEMS':
+      return {
+        ...state,
+        items: action.payload, 
+        loading: false
+      }
     default:
       return state;
   }
