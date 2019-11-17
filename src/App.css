@@ -1,6 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
 }
+
 #navbar,
 #shelf,
 #main-content {
@@ -9,11 +11,13 @@
 
 #navbar {
   width: 100vw;
-  /*height: 10vh;*/
+  height: 13vh;
   background-color: orangered;
   border-bottom: 1px solid white;
   position: fixed;
   top: 0;
+  display: flex;
+  justify-content: space-around;
 }
 
 #shelf,

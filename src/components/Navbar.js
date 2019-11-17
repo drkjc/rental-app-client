@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 function Navbar() {
 
   return (
-    <div>
+    <div id='navbar'>
+      <p><Link to={{ pathname: `/shelf` }}>shelf</Link></p>
       <p><Link to={{ pathname: `/shelves` }}>shelves</Link></p>
       <p><Link to={{ pathname: `/cart` }}>cart</Link></p>
     </div>
