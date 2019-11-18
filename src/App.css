@@ -46,12 +46,9 @@
   color: black;
 }
 
-#cart {
-  top: 90px;
-  position: relative;
-}
-
-#user-shelf {
+#cart,
+#user-shelf,
+#editItemForm {
   top: 90px;
   position: relative;
 }

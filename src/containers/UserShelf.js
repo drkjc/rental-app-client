@@ -23,7 +23,6 @@ class UserShelf extends Component {
 
 
   render() {
-    console.log(this.props, 'User Shelf Props')
     return (
       <div id="user-shelf">
         <AddItemForm addItem={this.props.addItemToShelf} user_id={this.props.user_id}/>

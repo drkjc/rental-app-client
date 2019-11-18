@@ -40,6 +40,13 @@ export default function shelfReducer(state = {
         items: action.payload,
         loading: false
       }
+    case 'UPDATE_ITEM':
+      return {
+        ...state,
+        item: action.payload,
+        loading: false,
+        redirect: true
+      }
     default:
       return state;
   }
