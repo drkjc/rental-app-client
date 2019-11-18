@@ -45,7 +45,6 @@ export default function shelfReducer(state = {
         ...state,
         item: action.payload,
         loading: false,
-        redirect: true
       }
     default:
       return state;

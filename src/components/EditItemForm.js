@@ -62,11 +62,4 @@ class EditItemForm extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    item: state.shelf.item,
-    loading: state.shelf.loading
-  }
-}
-
-export default connect(mapStateToProps, { updateItem })(EditItemForm);
+export default connect(null, { updateItem })(EditItemForm);
