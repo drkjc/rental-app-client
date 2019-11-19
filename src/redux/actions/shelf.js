@@ -22,10 +22,27 @@ export const getShelfItems = shelf_id => {
 export function getItem(shelf_id, id) {
   return (dispatch) => {
     dispatch({ type: 'LOADING' })
-    fetch(`${API_URL}/shelves/${shelf_id}items/${id}`)
+    fetch(`${API_URL}/shelves/${shelf_id}/items/${id}`)
       .then(response => response.json())
       .then(item => dispatch({ type: 'GET_ITEM', payload: item })
     )
+  }
+}
+
+export function addItemToCart(id, cart) {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING' })
+    fetch(`${API_URL}/carts/${id}/items`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ cart })
+    })
+      .then(response => response.json())
+      .then(cart => dispatch({ type: 'ADD_ITEM_TO_CART', payload: cart })
+      )
   }
 }
 

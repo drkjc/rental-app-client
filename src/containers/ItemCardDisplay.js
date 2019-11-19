@@ -1,32 +1,38 @@
 import React, { Component } from 'react'
 import RentItemForm from '../components/RentItemForm';
+import { getItem, addItemToCart } from '../redux/actions/shelf';
+import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
 
 class ItemCardDisplay extends Component {
 
-
-  state = {
-    redirect: false
+  componentDidMount() {
+    const { shelf_id, id } = this.props.match.params
+    this.props.getItem(shelf_id, id)
   }
 
-  redirectDisplayComponent = () => {
-    this.setState({
-      redirect: true
-    })
-  }
+  // state = {
+  //   redirect: false
+  // }
 
-  renderRedirect = () => {
-    if (this.state.redirect) {
-      return <Redirect to='/cart' />
-    }
-  }
+  // redirectDisplayComponent = () => {
+  //   this.setState({
+  //     redirect: true
+  //   })
+  // }
+
+  // renderRedirect = () => {
+  //   if (this.state.redirect) {
+  //     this.props.history.push('/cart')
+  //   }
+  // }
 
   rented = rented => {
     if (rented === false) {
       return (
         <>
           <h3>Available</h3>
-          <RentItemForm item={this.props.location.state} redirectDisplayComponent={this.redirectDisplayComponent} />
+          <RentItemForm item={this.props.item} redirectDisplayComponent={this.redirectDisplayComponent} addItemToCart={this.props.addItemToCart}/>
         </>
       )
     } else {
@@ -39,7 +45,7 @@ class ItemCardDisplay extends Component {
     if (this.props.loading) {
       return <div>Loading...</div>
     } else {
-      let {name, price, rented} = this.props.location.state
+      let {name, price, rented} = this.props.item
       return (
         <>
           <h1>{name}</h1>
@@ -52,12 +58,22 @@ class ItemCardDisplay extends Component {
 
   render() {
     return (
-      <div id="main-content">
-        {this.handleLoading()}
-        {this.renderRedirect()}
-      </div>
+      <>
+        <div id="shelf">Shelf is here</div>
+        <div id="main-content">
+          {this.handleLoading()}
+          {/* {this.renderRedirect()} */}
+        </div>
+      </>
     )
   }
 }
 
-export default ItemCardDisplay;
+const mapStateToProps = state => {
+  return {
+    item: state.shelf.item,
+    loading: state.shelf.loading
+  }
+}
+
+export default connect(mapStateToProps, { addItemToCart, getItem })(ItemCardDisplay);

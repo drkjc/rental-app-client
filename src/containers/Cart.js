@@ -29,7 +29,7 @@ class Cart extends Component {
   render() {
     return (
       <div id='cart'>
-        <h2>{this.itemsInCart()} item(s) in cart</h2>
+        {<h2>{this.itemsInCart()} item(s) in cart</h2>}
         {this.handleLoading()}
       </div>
     )}

@@ -27,9 +27,11 @@ class App extends Component {
                 </Switch>
               </div>
               <div>
-                <Route path="/shelves/:shelf_id/items/:id" render={(props) => <ItemCardDisplay {...props} />} />
-                <Route path="/shelves" render={(props) => <Shelf {...props} user_id={this.props.user_id} /> } />
-                <Route path="/shelves/:shelf_id/items" render={(props) => <Item {...props} />} />
+                <Switch>
+                  <Route exact path="/shelves/:shelf_id/items/:id" render={(props) => <ItemCardDisplay {...props} /> } />
+                  <Route exact path="/shelves" render={(props) => <Shelf {...props} user_id={this.props.user_id} /> } />
+                  <Route exact path="/shelves/:shelf_id/items" render={(props) => <Item {...props} />} />
+                </Switch>
               </div>
           </div>
         </Router>

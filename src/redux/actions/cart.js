@@ -5,27 +5,11 @@ export function getCart(id) {
     dispatch({ type: 'LOADING' })
     fetch(`${API_URL}/carts/${id}/items`)
       .then(response => response.json())
-      .then(cart => {
-        dispatch({ type: 'GET_CART', payload: cart })
+      .then(items => {
+        dispatch({ type: 'GET_CART', payload: items })
       }
     )
   }
-}
-
-export function addItemToCart(id, cart) {
-  return (dispatch) => {
-    dispatch({ type: 'LOADING' })
-    fetch(`${API_URL}/carts/${id}/items`, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ cart })
-    })
-    .then(response => response.json())
-    .then(cart => dispatch({ type: 'ADD_ITEM_TO_CART', payload: cart })
-  )}
 }
 
 export function removeItemFromCart(id, item_id) {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { addItemToCart } from '../redux/actions/cart';
+//import { connect } from 'react-redux';
+//import { addItemToCart } from '../redux/actions/cart';
 import Datetime from 'react-datetime';
 import '../react-datetime.css';
 
@@ -20,16 +20,16 @@ class RentItemForm extends Component {
     this.setState({ endDate: date })
   }
 
-  addToCart = event => {
+  handleSubmit = event => {
     let id = 1
     event.preventDefault();
     this.props.addItemToCart(id, this.state)
-    this.props.redirectDisplayComponent()
+    //this.props.redirectDisplayComponent()
   }
 
   render() {
     return (
-      <form onSubmit={event => this.addToCart(event)}>
+      <form onSubmit={this.handleSubmit}>
         Start Date: <Datetime onChange={this.handleDateStarted}/><br />
         End Date: <Datetime onChange={this.handleDateEnded} /><br />
         <button type="submit">Rent</button>
@@ -38,4 +38,4 @@ class RentItemForm extends Component {
   }
 }
 
-export default connect(null, { addItemToCart })(RentItemForm);
+export default RentItemForm;
