@@ -12,7 +12,7 @@ function CartCard({ item, removeItem }) {
   }
 
   return (
-    <div>
+    <div className="cartCard">
       <h1>{item.name}</h1>
       <p>{item.price}</p>
       <p>Due back on {dueDate} by {dueTime}  </p>

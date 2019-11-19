@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function UserShelfItemCard({ item }) {
 
   return (
-    <div>
+    <div className="item">
       <h3>{item.name}</h3>
       <p>{item.price}</p>
       <p>{item.rented ? 'Unavailable' : 'Available'}</p>

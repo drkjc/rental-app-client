@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700&display=swap');
+
 .App {
-  text-align: center;
+  font-family: 'Comfortaa', cursive;
+}
+
+.wrapper {
   display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #F4E8C1;
 }
 
 #navbar,
@@ -12,13 +20,25 @@
 #navbar {
   width: 100vw;
   height: 87px;
-  background-color: orangered;
-  border-bottom: 1px solid white;
+  background-color: #351F39;
+  border-bottom: 1px solid black;
   position: fixed;
   top: 0;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   z-index: 1;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: #F4E8C1;
+  font-weight: bold;
+  padding: 30px;
+}
+
+#navbar a:hover {
+  font-weight: 400;
 }
 
 #shelf,
@@ -30,16 +50,26 @@
 
 #shelf {
   width: 30vw;
-  background-color: palegreen;
+  background-color: #F4E8C1;
   right: 0;
   top: 90px
+}
+
+#shelf a {
+  text-decoration: none; 
+  color: #709FB0;
+  font-weight: bold;
+}
+
+#shelf a:hover {
+  font-weight: 400;
 }
 
 #main-content {
   right: 30vw;
   width: 70vw;
-  background-color: lightblue;
-  top: 90px
+  background-color: #709FB0;
+  top: 90px;
 }
 
 .item {
@@ -51,4 +81,30 @@
 #editItemForm {
   top: 90px;
   position: relative;
+}
+
+#user-shelf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#addItemForm {
+  padding: 10px;
+  margin: 10px;
+}
+
+#addItemForm input[type=text] {
+  padding: 5px;
+  width: 15rem;
+  font-size: large;
+}
+
+.item, .cartCard {
+  width: 15rem;
+  padding: 30px;
+  margin: 5px;
+  background-color: #726A95;
+  border-radius: 5px;
 }

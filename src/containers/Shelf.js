@@ -19,7 +19,12 @@ class Shelf extends Component {
 
   render() {
     return (
-      <div id="shelf">{this.handleLoading()}</div>
+      <div>
+        <div id="shelf">
+          <h3>Shelves</h3>
+          {this.handleLoading()}
+        </div>
+      </div>
     )
   }
 }

@@ -21,7 +21,10 @@ class Item extends Component {
 
   render() {
     return (
-      <div id="shelf">{this.handleLoading()}</div>
+      <div id="shelf">
+        <h3>Items</h3>
+        {this.handleLoading()}
+      </div>
     )
   }
 }
