@@ -11,28 +11,12 @@ class ItemCardDisplay extends Component {
     this.props.getItem(shelf_id, id)
   }
 
-  // state = {
-  //   redirect: false
-  // }
-
-  // redirectDisplayComponent = () => {
-  //   this.setState({
-  //     redirect: true
-  //   })
-  // }
-
-  // renderRedirect = () => {
-  //   if (this.state.redirect) {
-  //     this.props.history.push('/cart')
-  //   }
-  // }
-
   rented = rented => {
     if (rented === false) {
       return (
         <>
           <h3>Available</h3>
-          <RentItemForm item={this.props.item} redirectDisplayComponent={this.redirectDisplayComponent} addItemToCart={this.props.addItemToCart}/>
+          <RentItemForm item={this.props.item} addItemToCart={this.props.addItemToCart}/>
         </>
       )
     } else {
@@ -62,7 +46,6 @@ class ItemCardDisplay extends Component {
         <div id="shelf">Shelf is here</div>
         <div id="main-content">
           {this.handleLoading()}
-          {/* {this.renderRedirect()} */}
         </div>
       </>
     )
