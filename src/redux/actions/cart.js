@@ -20,7 +20,8 @@ export function removeItemFromCart(id, item_id) {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
-      }
+      },
+      body: JSON.stringify({ from: 'cart'})
     })
     .then(response => response.json())
     .then(item => dispatch({ type: 'REMOVE_ITEM_FROM_CART', payload: item })

@@ -15,10 +15,14 @@ class AddItemForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.props)
     let user_id = this.props.user_id 
     let shelf_id = user_id
     this.props.addItem(user_id, shelf_id, this.state)
+    this.setState({
+      name: '',
+      category: '',
+      price: ''
+    })
   }
 
   render() {

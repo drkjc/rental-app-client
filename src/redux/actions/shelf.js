@@ -68,7 +68,7 @@ export function addItemToShelf(user_id, shelf_id, item) {
       body: JSON.stringify({ item })
     })
       .then(response => response.json())
-      .then(item => dispatch({ type: 'ADD_ITEM_TO_SHELF', payload: item })
+      .then(items => dispatch({ type: 'ADD_ITEM_TO_SHELF', payload: items })
     )}
   }
 
