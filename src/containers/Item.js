@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { getShelfItems } from '../redux/actions/shelf';
 import { connect } from 'react-redux';
 import ItemList from '../components/ItemList'
+import Ad from '../components/Ad';
 
 class Item extends Component {
 
@@ -22,7 +23,7 @@ class Item extends Component {
   render() {
     return (
       <>
-        <div id="main-content">Main Content</div>
+        <div id="main-content"><Ad /></div>
         <div id="shelf">
         <h3>Items</h3>
         {this.handleLoading()}
