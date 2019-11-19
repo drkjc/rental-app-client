@@ -8,7 +8,7 @@ export default function shelfReducer(state = {
     case 'LOADING':
       return {
         ...state,
-        shelves: [...state.shelves],
+        shelves: [],
         loading: true
       }
     case 'GET_SHELVES':
@@ -52,6 +52,11 @@ export default function shelfReducer(state = {
         ...state,
         item: action.payload,
         loading: false,
+      }
+    case 'DELETE_ITEM_FROM_SHELF':
+      const items = state.items.filter(item => item.id !== action.payload.id);
+      return {
+        items
       }
     default:
       return state;

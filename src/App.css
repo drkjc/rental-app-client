@@ -2,13 +2,14 @@
 
 .App {
   font-family: 'Comfortaa', cursive;
+  background-color: #dcb1ae;
 }
 
 .wrapper {
   display: flex;
   justify-content: center;
   text-align: center;
-  background-color: #F4E8C1;
+  /*overflow: hidden;*/
 }
 
 #navbar,
@@ -20,7 +21,7 @@
 #navbar {
   width: 100vw;
   height: 87px;
-  background-color: #351F39;
+  background-color: #7d4f50;
   position: fixed;
   top: 0;
   display: flex;
@@ -31,7 +32,7 @@
 
 #navbar a {
   text-decoration: none;
-  color: #F4E8C1;
+  color: #d1be9c;
   font-weight: bold;
   padding: 30px;
 }
@@ -49,7 +50,7 @@
 
 #shelf {
   width: 30vw;
-  background-color: #F4E8C1;
+  background-color: #d1be9c;
   right: 0;
   top: 90px
 }
@@ -76,24 +77,30 @@
 }
 
 #cart,
-#user-shelf,
-#editItemForm {
+#user-shelf {
   top: 90px;
   position: relative;
 }
+
+#editItemForm {
+  top: 90px;
+  position: fixed;
+}
+
 
 #user-shelf {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 300px;
 }
 
 #addItemForm {
   position: fixed;
   top: 87px;
   z-index: 1;
-  background:#F4E8C1;
+  background: #709FB0;
   padding: 25px;
   border-bottom: 1px solid black;
   width: 100%;
@@ -109,7 +116,7 @@
   width: 15rem;
   padding: 30px;
   margin: 5px;
-  background-color: #726A95;
+  background-color:  #709FB0;
   border-radius: 5px;
 }
 

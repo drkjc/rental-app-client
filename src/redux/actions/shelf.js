@@ -72,18 +72,35 @@ export function addItemToShelf(user_id, shelf_id, item) {
     )}
   }
 
-  export function updateItem(user_id, shelf_id, item) {
-    return(dispatch) => {
-      dispatch({type: 'LOADING'})
-      fetch(`${API_URL}/users/${user_id}/shelves/${shelf_id}/items/${item.id}`, {
-        method: 'PATCH',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ item })
-      })
-        .then(response => response.json())
-        .then(item => dispatch({ type: 'UPDATE_ITEM', payload: item })
-      )}
+export function updateItem(user_id, shelf_id, item) {
+  return(dispatch) => {
+    dispatch({type: 'LOADING'})
+    fetch(`${API_URL}/users/${user_id}/shelves/${shelf_id}/items/${item.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ item })
+    })
+      .then(response => response.json())
+      .then(item => dispatch({ type: 'UPDATE_ITEM', payload: item })
+    )}
+}
+
+export function deleteItemFromShelf(shelf_id, item) {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING' })
+    fetch(`${API_URL}/shelves/${shelf_id}/items/${item.id}`, {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ from: 'shelf' })
+    })
+      .then(response => response.json())
+      .then(item => dispatch({ type: 'DELETE_ITEM_FROM_SHELF', payload: item})
+      )
   }
+}
