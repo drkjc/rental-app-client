@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import RentItemForm from '../components/RentItemForm';
 import { getItem, addItemToCart } from '../redux/actions/shelf';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom'
+import Item from './Item';
 
 class ItemCardDisplay extends Component {
 
@@ -41,9 +41,10 @@ class ItemCardDisplay extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <>
-        <div id="shelf">Shelf is here</div>
+        <Item {...this.props}/>
         <div id="main-content">
           {this.handleLoading()}
         </div>

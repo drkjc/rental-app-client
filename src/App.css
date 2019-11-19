@@ -21,7 +21,6 @@
   width: 100vw;
   height: 87px;
   background-color: #351F39;
-  border-bottom: 1px solid black;
   position: fixed;
   top: 0;
   display: flex;
@@ -91,8 +90,13 @@
 }
 
 #addItemForm {
-  padding: 10px;
-  margin: 10px;
+  position: fixed;
+  top: 87px;
+  z-index: 1;
+  background:#F4E8C1;
+  padding: 25px;
+  border-bottom: 1px solid black;
+  width: 100%;
 }
 
 #addItemForm input[type=text] {
@@ -107,6 +111,11 @@
   margin: 5px;
   background-color: #726A95;
   border-radius: 5px;
+}
+
+.item {
+  position: relative;
+  top: 200px;
 }
 
 .ad {

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { getShelfItems } from '../redux/actions/shelf';
 import { connect } from 'react-redux';
-import ItemList from '../components/ItemList'
+import ItemList from '../components/ItemList';
 import Ad from '../components/Ad';
 
 class Item extends Component {
 
   componentDidMount() {
+    console.log(this.props, 'Item')
     let shelf_id = this.props.match.params.shelf_id
     this.props.getShelfItems(shelf_id);
   }
