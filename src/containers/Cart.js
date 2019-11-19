@@ -19,9 +19,20 @@ class Cart extends Component {
       }
   }
 
-  render() {
-    return <div id='cart'>{this.handleLoading()}</div>
+  itemsInCart = () => {
+    let num = this.props.cart.filter(item => {
+      return item.shelf_id !== this.props.user_id
+    })
+    return num.length
   }
+
+  render() {
+    return (
+      <div id='cart'>
+        <h2>{this.itemsInCart()} item(s) in cart</h2>
+        {this.handleLoading()}
+      </div>
+    )}
 }
 
 const mapStateToProps = state => {
