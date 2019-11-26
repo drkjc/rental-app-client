@@ -6,12 +6,19 @@ import Item from './Item';
 
 class ItemCardDisplay extends Component {
 
+  addItem = (id, cart) => {
+    this.props.addItemToCart(id, cart)
+    //alert(`${this.props.location.state.name} added to cart!`)
+    this.props.history.push('/cart')
+  }
+
+
   rented = rented => {
     if (rented === false) {
       return (
         <>
           <h3>Available</h3>
-          <RentItemForm item={this.props.location.state} addItemToCart={this.props.addItemToCart}/>
+          <RentItemForm item={this.props.location.state} addItemToCart={this.addItem}/>
         </>
       )
     } else {
@@ -46,5 +53,6 @@ class ItemCardDisplay extends Component {
     )
   }
 }
+
 
 export default connect(null, { addItemToCart })(ItemCardDisplay);
