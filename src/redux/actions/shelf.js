@@ -29,23 +29,6 @@ export function getItem(shelf_id, id) {
   }
 }
 
-export function addItemToCart(id, cart) {
-  return (dispatch) => {
-    dispatch({ type: 'LOADING' })
-    fetch(`${API_URL}/carts/${id}/items`, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ cart })
-    })
-      .then(response => response.json())
-      .then(cart => dispatch({ type: 'ADD_ITEM_TO_CART', payload: cart })
-      )
-  }
-}
-
 export function getUserShelfItems(user_id, shelf_id) {
   return (dispatch) => {
     dispatch({type: 'LOADING'})

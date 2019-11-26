@@ -18,10 +18,17 @@ export default function cartReducer(state = {
         items: action.payload,
         loading: false
       }
-    case 'REMOVE_ITEM_FROM_CART':
-      const items = state.items.filter(item => item.id !== action.payload.id);
+    case 'ADD_ITEM_TO_CART':
       return {
-        items
+        ...state,
+        items: [...state.items, action.payload],
+        loading: false
+      }
+    case 'REMOVE_ITEM_FROM_CART':
+      return {
+        ...state,
+        items: action.payload,
+        loading: false
       }
     default:
       return state;
