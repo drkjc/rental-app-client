@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import RentItemForm from '../components/RentItemForm';
-import { addItemToCart } from '../redux/actions/shelf';
+import { addItemToCart } from '../redux/actions/cart';
 import { connect } from 'react-redux';
 import Item from './Item';
 
 class ItemCardDisplay extends Component {
 
-  addItem = (id, cart) => {
-    this.props.addItemToCart(id, cart)
-    //alert(`${this.props.location.state.name} added to cart!`)
+  addItem = (id, item) => {
+    this.props.addItemToCart(id, item)
     this.props.history.push('/cart')
   }
 
