@@ -1,22 +1,17 @@
 import React, { Component } from 'react'
 import RentItemForm from '../components/RentItemForm';
-import { getItem, addItemToCart } from '../redux/actions/shelf';
+import { addItemToCart } from '../redux/actions/shelf';
 import { connect } from 'react-redux';
 import Item from './Item';
 
 class ItemCardDisplay extends Component {
-
-  componentDidMount() {
-    const { shelf_id, id } = this.props.match.params
-    this.props.getItem(shelf_id, id)
-  }
 
   rented = rented => {
     if (rented === false) {
       return (
         <>
           <h3>Available</h3>
-          <RentItemForm item={this.props.item} addItemToCart={this.props.addItemToCart}/>
+          <RentItemForm item={this.props.location.state} addItemToCart={this.props.addItemToCart}/>
         </>
       )
     } else {
@@ -29,7 +24,7 @@ class ItemCardDisplay extends Component {
     if (this.props.loading) {
       return <div>Loading...</div>
     } else {
-      let {name, price, rented} = this.props.item
+      let {name, price, rented} = this.props.location.state
       return (
         <>
           <h1>{name}</h1>
@@ -41,7 +36,6 @@ class ItemCardDisplay extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <>
         <Item {...this.props}/>
@@ -53,11 +47,4 @@ class ItemCardDisplay extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    item: state.shelf.item,
-    loading: state.shelf.loading
-  }
-}
-
-export default connect(mapStateToProps, { addItemToCart, getItem })(ItemCardDisplay);
+export default connect(null, { addItemToCart })(ItemCardDisplay);
