@@ -55,7 +55,6 @@ class EditItemForm extends Component {
           <input type="text" name="category" value={this.state.category} onChange={this.handleChange}></input><br />
           <input type="text" name="price" value={this.state.price} onChange={this.handleChange}></input><br />
           <button>Edit Item</button>
-          <button>Delete Item</button>
         </form>
       </div>
     )
