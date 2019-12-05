@@ -2,10 +2,11 @@
 
 Looking for a new book to read but can't find it at the library? Try Divvy! People in your area are sharing their bookshelves! Sign up today to share yours!
 
+[Video Walkthrough](https://www.youtube.com/watch?v=yngR9xrMqN4&feature=emb_title)
+
 ## Getting Started 
 
 Clone the API (https://github.com/drkjc/rental-app-api) and this repo and start the server to get up and running.
-[Video Walkthrough](https://www.youtube.com/watch?v=yngR9xrMqN4&feature=emb_title)
 
 * For the API
 ```
