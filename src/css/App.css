@@ -1,8 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:300,400,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #dcb1ae;
+}
 
 .App {
-  font-family: 'Comfortaa', cursive;
-  background-color: #dcb1ae;
+  font-family: "Comfortaa", cursive;
 }
 
 .wrapper {
@@ -18,29 +27,6 @@
   float: left;
 }
 
-#navbar {
-  width: 100vw;
-  height: 87px;
-  background-color: #7d4f50;
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 1;
-}
-
-#navbar a {
-  text-decoration: none;
-  color: #d1be9c;
-  font-weight: bold;
-  padding: 30px;
-}
-
-#navbar a:hover {
-  font-weight: 400;
-}
-
 #shelf,
 #main-content {
   height: 90vh;
@@ -52,12 +38,12 @@
   width: 30vw;
   background-color: #d1be9c;
   right: 0;
-  top: 90px
+  top: 90px;
 }
 
 #shelf a {
-  text-decoration: none; 
-  color: #709FB0;
+  text-decoration: none;
+  color: #709fb0;
   font-weight: bold;
 }
 
@@ -68,7 +54,7 @@
 #main-content {
   right: 30vw;
   width: 70vw;
-  background-color: #709FB0;
+  background-color: #709fb0;
   top: 90px;
 }
 
@@ -87,7 +73,6 @@
   position: fixed;
 }
 
-
 #user-shelf {
   display: flex;
   justify-content: center;
@@ -100,23 +85,24 @@
   position: fixed;
   top: 87px;
   z-index: 1;
-  background: #709FB0;
+  background: #709fb0;
   padding: 25px;
   border-bottom: 1px solid black;
   width: 100%;
 }
 
-#addItemForm input[type=text] {
+#addItemForm input[type="text"] {
   padding: 5px;
   width: 15rem;
   font-size: large;
 }
 
-.item, .cartCard {
+.item,
+.cartCard {
   width: 15rem;
   padding: 30px;
   margin: 5px;
-  background-color:  #709FB0;
+  background-color: #709fb0;
   border-radius: 5px;
 }
 
