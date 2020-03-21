@@ -47,11 +47,6 @@ body {
   position: relative;
 }
 
-#editItemForm {
-  top: 90px;
-  position: fixed;
-}
-
 #user-shelf {
   display: flex;
   justify-content: center;
