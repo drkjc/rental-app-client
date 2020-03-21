@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import "../css/AddItemForm.css";
+import ReactDatetimeClass from "react-datetime";
 
 class AddItemForm extends Component {
   state = {
     name: "",
     category: "",
-    price: ""
+    price: "",
+    startDate: "",
+    endDate: ""
   };
 
   handleChange = event => {
@@ -54,6 +57,7 @@ class AddItemForm extends Component {
             onChange={this.handleChange}
           ></input>
           <br />
+
           <button>Add Item</button>
         </form>
       </div>
