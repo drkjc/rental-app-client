@@ -7,6 +7,7 @@ class AddItemForm extends Component {
     name: "",
     category: "",
     price: "",
+    rented: true,
     date: new Date()
   };
 
