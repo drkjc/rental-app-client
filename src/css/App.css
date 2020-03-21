@@ -47,30 +47,6 @@ body {
   position: relative;
 }
 
-#user-shelf {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 300px;
-}
-
-#addItemForm {
-  position: fixed;
-  top: 87px;
-  z-index: 1;
-  background: #709fb0;
-  padding: 25px;
-  border-bottom: 1px solid black;
-  width: 100%;
-}
-
-#addItemForm input[type="text"] {
-  padding: 5px;
-  width: 15rem;
-  font-size: large;
-}
-
 .item,
 .cartCard {
   width: 15rem;
