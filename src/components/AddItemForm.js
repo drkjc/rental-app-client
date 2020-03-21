@@ -1,20 +1,25 @@
 import React, { Component } from "react";
 import "../css/AddItemForm.css";
-import ReactDatetimeClass from "react-datetime";
+import DatetimeRangePicker from "react-datetime-range-picker";
 
 class AddItemForm extends Component {
   state = {
     name: "",
     category: "",
     price: "",
-    startDate: "",
-    endDate: ""
+    date: new Date()
   };
 
   handleChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
+    if (event.target) {
+      this.setState({
+        [event.target.name]: event.target.value
+      });
+    } else {
+      this.setState({
+        date: event
+      });
+    }
   };
 
   handleSubmit = event => {
@@ -25,7 +30,8 @@ class AddItemForm extends Component {
     this.setState({
       name: "",
       category: "",
-      price: ""
+      price: "",
+      date: new Date()
     });
   };
 
@@ -57,7 +63,13 @@ class AddItemForm extends Component {
             onChange={this.handleChange}
           ></input>
           <br />
-
+          Rental Range:
+          <DatetimeRangePicker
+            input={true}
+            onChange={this.handleChange}
+            value={this.state.date}
+          />
+          <br />
           <button>Add Item</button>
         </form>
       </div>
